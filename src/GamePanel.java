@@ -1,9 +1,8 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicBorders;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
@@ -92,6 +91,46 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setFont(new Font("Ink Free", Font.BOLD, 50));
         FontMetrics scoreFontMetrics = getFontMetrics(g.getFont());
         g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - scoreFontMetrics.stringWidth("Score: " + applesEaten))/2, SCREEN_HEIGHT/2 + 100);
+
+        JButton retry = new JButton("RETRY");
+        retry.setBackground(Color.BLACK);
+        retry.setForeground(Color.GREEN);
+        retry.setFocusable(false);
+        retry.setBorder(null);
+
+        retry.setFont(new Font("Ink Free", Font.BOLD, 40));
+        retry.setBounds(200, 450, 200, 100);
+
+        retry.addMouseListener(new MouseListener() {
+               @Override
+               public void mouseClicked(MouseEvent e) {
+
+               }
+
+               @Override
+               public void mousePressed(MouseEvent e) {
+                   retry.setBackground(Color.BLACK);
+                   retry.setForeground(Color.WHITE);
+               }
+
+               @Override
+               public void mouseReleased(MouseEvent e) {
+                   retry.setBackground(Color.BLACK);
+                   retry.setForeground(Color.GREEN);
+               }
+
+               @Override
+               public void mouseEntered(MouseEvent e) {
+
+               }
+
+               @Override
+               public void mouseExited(MouseEvent e) {
+
+               }
+           }
+        );
+        add(retry);
     }
 
     private void newApple() {
