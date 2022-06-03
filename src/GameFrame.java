@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class GameFrame extends JFrame {
 
-    GameFrame() {
+    GameFrame(int x, int y) {
         this.add(new GamePanel());
         // Packs the frame around the content
         // In this case, the only content is the GamePanel (JPanel), so I can just pack the frame around that

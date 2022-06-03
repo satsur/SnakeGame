@@ -100,17 +100,16 @@ public class GamePanel extends JPanel implements ActionListener {
 
         retry.setFont(new Font("Ink Free", Font.BOLD, 40));
         retry.setBounds(200, 450, 200, 100);
-
         retry.addMouseListener(new MouseListener() {
                @Override
                public void mouseClicked(MouseEvent e) {
-
+                   SnakeGame.close();
+                   SnakeGame.newGame();
                }
 
                @Override
                public void mousePressed(MouseEvent e) {
-                   retry.setBackground(Color.BLACK);
-                   retry.setForeground(Color.WHITE);
+                   retry.setForeground(Color.BLACK);
                }
 
                @Override
